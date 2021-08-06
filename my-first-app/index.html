@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mon-Game</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="Game">
+      <form>
+        <div class="champ">
+        <label for="nombre">entrer un nombre</label>
+        <input type="number" id="nombre" min="0" max="10" placeholder="nombre">
+        <input type="button" value="tester" onclick="maFonction();"  >
+         </div>
+        <label>votre score est : <span id="score">0</span></label>
+    </form>
+
+    </div>
+    <!-- <script type="module" src="/main.js"> -->
+
+<script type="text/javascript">
+    function entierAleatoire(min, max)
+{
+ return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function maFonction() {
+var entier = entierAleatoire(0, 10);
+var nombreUtilisateur = document.querySelector('#nombre').value;
+var scoreJeu=document.querySelector("#score");
+var score=parseInt(scoreJeu.textContent);
+if(nombreUtilisateur==entier){
+    score ++;
+    scoreJeu.innerHTML=" "+ score;
+    alert('vous avez trouvez le nombre aleatoire');
+
+}else{
+    alert('tu as rater');
+    score --;
+    scoreJeu.innerHTML=" "+ score;
+}
+    
+}
+    </script>
+  </body>
+</html>
